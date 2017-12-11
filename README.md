@@ -1,37 +1,34 @@
-## Welcome to GitHub Pages
+## Welcome To The Offical HorrorStudio Web Page
 
-You can use the [editor on GitHub](https://github.com/Hackney2018/HorrorStudio.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Here you will be able to read many spooky stories. The story genres will range from Real Ghost Stories to Creepy Pasta.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Reading these stories will give you the best haunts and will make you have the urge to keep reading more and more. There is something for eveyone to read.  If you have a story to submit to us you will be able to submit it within the submiton tab.
 
-### Markdown
+### Upload Your Story
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Steps To Upload Your Story With Us
 
-```markdown
-Syntax highlighted code block
+1: Sign Up or Login To Your Account
 
-# Header 1
-## Header 2
-### Header 3
+2: In The Top Right Click The " Submit Your Story" Tab
 
-- Bulleted
-- List
+3: In The "Genre" Category You Will Entail What Genre Your Story Falls Under
 
-1. Numbered
-2. List
+4: You Will Then Type Your Story In The Box Provided
 
-**Bold** and _Italic_ and `Code` text
+5: If You Wish To Remain Anonymous, There Will Be A Box To The Left Of The "Submit" Button That You Can Click Before Submitting
 
-[Link](url) and ![Image](src)
+6: After Finalizing and Reviewing Your Story You Will Then Be Able To Submit Your Story To Us Where We Then Further Review Your Story
+
+
+
+
+### Contact Us
+
+If You Wish To Contact Us With Any Problems Or Questions Our Emails Will Be Listed Below
+
+Caden Hayes: Caden.Hayes2018@gmail.com
+
+Trevor Hackney: hackneytrevor@gmail.com
+
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Hackney2018/HorrorStudio.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
