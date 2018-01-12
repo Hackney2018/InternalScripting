@@ -1,19 +1,19 @@
 body { 
-    margin: 0;
+    margin:0;
      }
 
 
 header {
-   background: grey;
-     color: white;
+   background:grey;
+     color:white;
      }
 
 header h1 {
-	margin: 0;
+	margin:0;
      }
 
 nav ul{
-	margin: 0;
+	margin:0;
     }
 
 nav ul li {
