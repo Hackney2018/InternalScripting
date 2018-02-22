@@ -1,27 +1,17 @@
-let canvas, ctx, w, h, thunder, text, particles, input;
+let canvas, ctx, w, h, laser, text, particles, input;
 
-function Thunder(options) {
+function Laser(options) {
     options = options || {};
-    this.lifespan = options.lifespan || Math.round(Math.random() * 10 + 10);
+    this.lifespan = options.lifespan || Math.round(Math.random() * 20 + 20);
     this.maxlife = this.lifespan;
-    this.color = options.color || '#fefefe';
-    this.glow = options.glow || '#2323fe';
+    this.color = options.color || '#fd2423';
     this.x = options.x || Math.random() * w;
     this.y = options.y || Math.random() * h;
     this.width = options.width || 2;
-    this.direct = options.direct || Math.random() * Math.PI * 2;
-    this.max = options.max || Math.round(Math.random() * 10 + 20);
-    this.segments = [...new Array(this.max)].map(() => {
-        return {
-            direct: this.direct + (Math.PI * Math.random() * 0.2 - 0.1),
-            length: Math.random() * 20 + 80,
-            change: Math.random() * 0.04 - 0.02
-        };
-    });
 
     this.update = function(index, array) {
-        this.segments.forEach(s => { (s.direct += s.change) && Math.random() > 0.96 && (s.change *= -1) });
-        (this.lifespan > 0 && this.lifespan--) || this.remove(index, array);
+        this.lifespan > 0 && this.lifespan--;
+        this.lifespan <= 0 && this.remove(index, array);
     }
 
     this.render = function(ctx) {
@@ -30,30 +20,9 @@ function Thunder(options) {
         ctx.globalAlpha = this.lifespan / this.maxlife;
         ctx.strokeStyle = this.color;
         ctx.lineWidth = this.width;
-        ctx.shadowBlur = 32;
-        ctx.shadowColor = this.glow;
         ctx.moveTo(this.x, this.y);
-        let prev = { x: this.x, y: this.y };
-        this.segments.forEach(s => {
-            const x = prev.x + Math.cos(s.direct) * s.length;
-            const y = prev.y + Math.sin(s.direct) * s.length;
-            prev = { x: x, y: y };
-            ctx.lineTo(x, y);
-        });
+        ctx.lineTo(w, this.y);
         ctx.stroke();
-        ctx.closePath();
-        ctx.shadowBlur = 0;
-        const strength = Math.random() * 80 + 40;
-        const light = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, strength);
-        light.addColorStop(0, 'rgba(250, 200, 50, 0.6)');
-        light.addColorStop(0.1, 'rgba(250, 200, 50, 0.2)');
-        light.addColorStop(0.4, 'rgba(250, 200, 50, 0.06)');
-        light.addColorStop(0.65, 'rgba(250, 200, 50, 0.01)');
-        light.addColorStop(0.8, 'rgba(250, 200, 50, 0)');
-        ctx.beginPath();
-        ctx.fillStyle = light;
-        ctx.arc(this.x, this.y, strength, 0, Math.PI * 2);
-        ctx.fill();
         ctx.closePath();
     }
 
@@ -66,13 +35,13 @@ function Spark(options) {
     options = options || {};
     this.x = options.x || w * 0.5;
     this.y = options.y || h * 0.5;
-    this.v = options.v || { direct: Math.random() * Math.PI * 2, weight: Math.random() * 14 + 2, friction: 0.88 };
-    this.a = options.a || { change: Math.random() * 0.4 - 0.2, min: this.v.direct - Math.PI * 0.4, max: this.v.direct + Math.PI * 0.4 };
-    this.g = options.g || { direct: Math.PI * 0.5 + (Math.random() * 0.4 - 0.2), weight: Math.random() * 0.25 + 0.25 };
+    this.v = options.v || { direct: Math.random() * Math.PI * 2, weight: Math.random() * 10 + 2, friction: 0.94 };
+    this.a = options.a || { change: Math.random() * 0.2 - 0.1, min: this.v.direct - Math.PI * 0.4, max: this.v.direct + Math.PI * 0.4 };
+    this.g = options.g || { direct: Math.PI * 0.5 + (Math.random() * 0.4 - 0.2), weight: Math.random() * 0.5 + 0.5 };
     this.width = options.width || Math.random() * 3;
     this.lifespan = options.lifespan || Math.round(Math.random() * 20 + 40);
     this.maxlife = this.lifespan;
-    this.color = options.color || '#feca32';
+    this.color = options.color || '#fdab23';
     this.prev = { x: this.x, y: this.y };
 
     this.update = function(index, array) {
@@ -81,7 +50,7 @@ function Spark(options) {
         this.x += Math.cos(this.g.direct) * this.g.weight;
         this.y += Math.sin(this.v.direct) * this.v.weight;
         this.y += Math.sin(this.g.direct) * this.g.weight;
-        this.v.weight > 0.2 && (this.v.weight *= this.v.friction);
+        this.v.weight *= this.v.friction;
         this.v.direct += this.a.change;
         (this.v.direct > this.a.max || this.v.direct < this.a.min) && (this.a.change *= -1);
         this.lifespan > 0 && this.lifespan--;
@@ -107,7 +76,7 @@ function Spark(options) {
 
 function Particles(options) {
     options = options || {};
-    this.max = options.max || Math.round(Math.random() * 10 + 10);
+    this.max = options.max || Math.round(Math.random() * 20 + 10);
     this.sparks = [...new Array(this.max)].map(() => new Spark(options));
 
     this.update = function() {
@@ -129,8 +98,8 @@ function Text(options) {
 
     this.size = options.size || 100;
     this.copy = (options.copy || `Hello!`) + ' ';
-    this.color = options.color || '#cd96fe';
-    this.delay = options.delay || 5;
+    this.color = options.color || '#fecd96';
+    this.delay = options.delay || 4;
     this.basedelay = this.delay;
     buffer.font = `${this.size}px Comic Sans MS`;
     this.bound = buffer.measureText(this.copy);
@@ -151,23 +120,20 @@ function Text(options) {
         const data = this.data.data;
         for (let i = this.index * 4; i < data.length; i += (4 * this.data.width)) {
             const bitmap = data[i] + data[i + 1] + data[i + 2] + data[i + 3];
-            if (bitmap > 255 && Math.random() > 0.96) {
+            if (bitmap > 255 && Math.random() > 0.86) {
                 const x = this.x + this.index;
                 const y = this.y + (i / this.bound.width / 4);
-                thunder.push(new Thunder({
+                laser.push(new Laser({
                     x: x,
                     y: y
                 }));
-                Math.random() > 0.5 && particles.push(new Particles({
+                Math.random() > 0.7 && particles.push(new Particles({
                     x: x,
                     y: y
                 }));
             }
         }
-        if (this.delay-- < 0) {
-            this.index++;
-            this.delay += this.basedelay;
-        }
+        this.delay-- < 0 && (this.index++ && (this.delay += this.basedelay));
     }
 
     this.render = function(ctx) {
@@ -183,19 +149,19 @@ function loop() {
 
 function update() {
     text.update();
-    thunder.forEach((l, i) => l.update(i, thunder));
+    laser.forEach((l, i) => l.update(i, laser));
     particles.forEach(p => p.update());
 }
 
 function render() {
     ctx.globalCompositeOperation = 'source-over';
-    ctx.globalAlpha = 1;
+    ctx.globalAlpha = 0.9;
     ctx.fillStyle = '#000000';
     ctx.fillRect(0, 0, w, h);
     //
     ctx.globalCompositeOperation = 'screen';
     text.render(ctx);
-    thunder.forEach(l => l.render(ctx));
+    laser.forEach(l => l.render(ctx));
     particles.forEach(p => p.render(ctx));
 }
 
@@ -208,7 +174,7 @@ function render() {
     h = window.innerHeight;
     canvas.width = w;
     canvas.height = h;
-    thunder = [];
+    laser = [];
     particles = [];
     //
     text = new Text({
@@ -217,7 +183,7 @@ function render() {
     canvas.addEventListener('click', (e) => {
         const x = e.clientX;
         const y = e.clientY;
-        thunder.push(new Thunder({
+        laser.push(new Laser({
             x: x,
             y: y
         }));
