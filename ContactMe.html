@@ -6,13 +6,15 @@
 <style>
 .text-effect {
 overflow: hidden;
-position: relative;
+position: relative;  
 filter: contrast(110%) brightness(190%);
+<!-- To display full neon effect. Set the position to: static -->
 }
 .neon {
 position: relative;
 background: black;
 color: transparent;
+<!-- To display full neon effect. Set the position to: static -->
 }
 .neon::before, .neon::after {
 content: attr(data-text);
