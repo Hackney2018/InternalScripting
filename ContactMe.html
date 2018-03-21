@@ -3,7 +3,11 @@
 <head>
 <title>Contact Me</title>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/WordEditor.js"></script>
+<script type="text/javascript">
+$('[data-text]').on('keyup', function(){
+  $(this).attr('data-text', $(this).text());
+});
+</script>
 <link rel="shortcut icon" href="favicon.ico">
 <style>
 .text-effect {
