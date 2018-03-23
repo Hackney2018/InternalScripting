@@ -18,15 +18,13 @@ $('[data-text]').on('keyup', function(){
 <style>
 .text-effect {
 overflow: hidden;
-position: relative;  
+position: relative;
 filter: contrast(110%) brightness(190%);
-<!-- To display full neon effect. Set the position to: static -->
 }
 .neon {
 position: relative;
 background: black;
 color: transparent;
-<!-- To display full neon effect. Set the position to: static -->
 }
 .neon::before, .neon::after {
 content: attr(data-text);
@@ -40,7 +38,8 @@ pointer-events: none;
 .neon::after {
 mix-blend-mode: difference;
 }
-.gradient, .spotlight {
+.gradient,
+.spotlight {
 position: absolute;
 top: 0;
 left: 0;
@@ -48,7 +47,6 @@ bottom: 0;
 right: 0;
 pointer-events: none;
 z-index: 10;
-<!-- To display full neon effect. Set the position to: fixed -->
 }
 .gradient {
 background: linear-gradient(45deg, red, blue);
@@ -56,11 +54,10 @@ mix-blend-mode: multiply;
 }
 .spotlight {
 animation: light 5s infinite linear;
-background: radial-gradient(circle, white, transparent 25%) 0 0 / 25% 25%, radial-gradient(circle, white, black 25%) 50% 50% / 12.5% 12.5%;
+background: radial-gradient(circle, #ffffff, rgba(0, 0, 0, 0) 25%) 0 0/25% 25%, radial-gradient(circle, #ffffff, #000000 25%) 50% 50%/12.5% 12.5%;
 top: -100%;
 left: -100%;
 mix-blend-mode: color-dodge;
-<!-- mix blend mode is the text background color and code -->
 }
 @keyframes light {
 100% {
@@ -68,9 +65,9 @@ transform: translate3d(50%, 50%, 0);
 }
 }
 .neon {
-font: 800 70px 'Lato', Times New Roman;
+font: 700 220px 'Lato', sans-serif;
 text-transform: uppercase;
-text-align: left;
+text-align: center;
 margin: 0;
 }
 .neon:focus {
@@ -79,10 +76,8 @@ border: 1px dotted white;
 }
 body {
 background: black;
-display: inline;
+display: flex;
 min-height: 100vh;
-height: 100%;
-width: 100%;
 justify-content: center;
 align-content: center;
 align-items: center;
