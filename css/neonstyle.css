@@ -12,7 +12,7 @@
   content: attr(data-text);
   color: white;
   filter: blur(0.02em);
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
