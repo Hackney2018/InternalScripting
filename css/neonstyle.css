@@ -3,7 +3,6 @@
   position: relative;
   filter: contrast(110%) brightness(190%);
 }
-
 .neon {
   position: relative;
   background: black;
@@ -21,10 +20,8 @@
 .neon::after {
   mix-blend-mode: difference;
 }
-
-.gradient,
-.spotlight {
-  position: relative;
+.gradient, .spotlight {
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
@@ -32,20 +29,17 @@
   pointer-events: none;
   z-index: 10;
 }
-
 .gradient {
   background: linear-gradient(45deg, red, blue);
   mix-blend-mode: multiply;
 }
-
 .spotlight {
   animation: light 5s infinite linear;
-  background: radial-gradient(circle, #ffffff, rgba(0, 0, 0, 0) 25%) 0 0/25% 25%, radial-gradient(circle, #ffffff, #000000 25%) 50% 50%/12.5% 12.5%;
+  background: radial-gradient(circle, white, transparent 25%) 0 0 / 25% 25%, radial-gradient(circle, white, black 25%) 50% 50% / 12.5% 12.5%;
   top: -100%;
   left: -100%;
   mix-blend-mode: color-dodge;
 }
-
 @keyframes light {
   100% {
     transform: translate3d(50%, 50%, 0);
@@ -59,9 +53,8 @@
 }
 .neon:focus {
   outline: none;
-  border: 1px hidden;
+  border: 1px dotted white;
 }
-
 body {
   background: black;
   display: flex;
