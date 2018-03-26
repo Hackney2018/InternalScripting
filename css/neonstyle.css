@@ -53,7 +53,7 @@
 }
 .neon:focus {
   outline: none;
-  border: 1px relative;
+  border: 1px hidden;
 }
 body {
   background: black;
