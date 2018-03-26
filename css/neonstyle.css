@@ -24,7 +24,7 @@
 
 .gradient,
 .spotlight {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
@@ -59,12 +59,12 @@
 }
 .neon:focus {
   outline: none;
-  border: 1px hidden;
+  border: 1px dotted white;
 }
 
 body {
   background: black;
-  display: absolute;
+  display: flex;
   min-height: 100vh;
   justify-content: center;
   align-content: center;
