@@ -4,7 +4,7 @@
   filter: contrast(110%) brightness(190%);
 }
 .neon {
-  position: relative;
+  position: absolute;
   background: black;
   color: transparent;
 }
@@ -12,7 +12,7 @@
   content: attr(data-text);
   color: white;
   filter: blur(0.02em);
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   pointer-events: none;
