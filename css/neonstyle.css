@@ -1,6 +1,6 @@
 .text-effect {
   overflow: hidden;
-  position: absolute;
+  position: relative;
   filter: contrast(110%) brightness(190%);
 }
 
@@ -64,7 +64,7 @@
 
 body {
   background: black;
-  display: inline;
+  display: relative;
   min-height: 100vh;
   justify-content: center;
   align-content: center;
