@@ -4,7 +4,7 @@
   filter: contrast(110%) brightness(190%);
 }
 .neon {
-  position: absolute;
+  position: relative;
   background: black;
   color: transparent;
 }
