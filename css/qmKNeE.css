@@ -1,10 +1,10 @@
+<style>
 .text-effect {
   overflow: hidden;
   position: relative;
   -webkit-filter: contrast(110%) brightness(190%);
           filter: contrast(110%) brightness(190%);
 }
-
 .neon {
   position: relative;
   background: black;
@@ -88,3 +88,4 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+</style>
