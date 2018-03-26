@@ -21,35 +21,35 @@
 </body>
 <style>
 .text-effect {
-overflow: hidden;
-position: relative;
-filter: contrast(110%) brightness(190%);
+  overflow: hidden;
+  position: relative;
+  filter: contrast(110%) brightness(190%);
 }
 .neon {
-position: relative;
-background: black;
-color: transparent;
+  position: relative;
+  background: black;
+  color: transparent;
 }
 .neon::before, .neon::after {
-content: attr(data-text);
-color: white;
-filter: blur(0.02em);
-position: relative;
-top: 0;
-left: 0;
-pointer-events: none;
+  content: attr(data-text);
+  color: white;
+  filter: blur(0.02em);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 .neon::after {
-mix-blend-mode: difference;
+  mix-blend-mode: difference;
 }
 .gradient, .spotlight {
-position: absolute;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-pointer-events: none;
-z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 10;
 }
 .gradient {
 background: linear-gradient(45deg, red, blue);
@@ -74,17 +74,18 @@ text-align: center;
 margin: 0;
 }
 .neon:focus {
-outline: none;
-border: 1px dotted white;
+  outline: none;
+  border: 1px dotted white;
 }
 body {
-background: black;
-display: in-line;
-min-height: 100vh;
-justify-content: center;
-align-content: center;
-align-items: center;
+  background: black;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
+
 </style>
 </html>
 <html>
