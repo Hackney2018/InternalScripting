@@ -2,7 +2,23 @@
 <html>
 <head>
 <title>Projects</title>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><span style="color: Orange">Projects</span></li>
+<li><a href="Certifications.html">Certifications</a></li>
+<li><a href="FutureAdvances.html">Future Advances</a></li>
+<li><a href="Aboutme.html">About Me</a></li>
+<li><a href="ContactMe.html">Contact Me</a></li> 
+</ul>
+</body>
 <style>
 .text-effect {
 overflow: hidden;
@@ -10,9 +26,9 @@ position: relative;
 filter: contrast(110%) brightness(190%);
 }
 .neon {
-  position: relative;
-  background: black;
-  color: transparent;
+position: relative;
+background: black;
+color: transparent;
 }
 .neon::before, .neon::after {
 content: attr(data-text);
@@ -49,7 +65,7 @@ mix-blend-mode: color-dodge;
 @keyframes light {
 100% {
 transform: translate3d(50%, 50%, 0);
-	}
+}
 }
 .neon {
 font: 700 220px 'Lato', sans-serif;
@@ -70,17 +86,10 @@ align-content: center;
 align-items: center;
 }
 </style>
-</head>
+</html>
+<html>
+<title>Projects</title>
 <body>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><span style="color: red">Projects</span></li>
-<li><a href="Certifications.html">Certifications</a></li>
-<li><a href="FutureAdvances.html">Future Advances</a></li>
-<li><a href="Aboutme.html">About Me</a></li>
-<li><a href="ContactMe.html">Contact Me</a></li> 
-<body>
-<p></p>
 <div class="text-effect">
 <h1 class="neon" data-text="Projects"contenteditable>neon</h1>
 <div class="gradient"></div>
@@ -99,5 +108,11 @@ align-items: center;
 <p><a href="https://certification.comptia.org/home"><strong>CompTIA Certification site (click)</a></p></strong>
 <p><a href="https://www.comptia.org"><strong>CompTIA Main site(click)</a></p></strong>
 <p><a href="https://hackney2018.github.io/HorrorStudio.github.io"><strong>My Github Project (click)</a></p></strong>
+<script>
+// This is just to auto-update the data-text if you're editing it directly on the page and is not required for the actual effect
+$('[data-text]').on('keyup', function(){
+$(this).attr('data-text', $(this).text());
+});
+</script>
 </body>
 </html>
