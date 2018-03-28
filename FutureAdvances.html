@@ -88,12 +88,14 @@ align-items: center;
 </style>
 </html>
 <html>
-<title>Contact Me</title>
+<title>Future Advances</title>
 <body>
 <div class="text-effect">
 <h1 class="neon" data-text="Future"contenteditable>neon</h1> <h1 class="neon" data-text="Advances"contenteditable>neon</h1> 
 <div class="gradient"></div>
 <div class="spotlight"></div>
+
+<br></br>
 <img src="https://images.techhive.com/images/article/2015/08/microsoft-logo-redwest-a-100611028-large.jpeg"
 a href="https://mail.google.com/mail/u/0/#inbox"  vertical-align: text-top;
 <p></p>
@@ -103,5 +105,11 @@ a href="https://mail.google.com/mail/u/0/#inbox"  vertical-align: text-top;
 <strong><p> If I work with Treyarch or another gaming company I will work on creating a server that will be able to detect false bots and kick them out of the server upon joining.</strong></p>
 <strong><p> My ideas will help many companies protect their servers from DDOS attacks and down time.</strong></p>
 <strong><p> The only down time that will be occuring will be maintenance or scheduled down times.</strong></p>
+<script>
+// This is just to auto-update the data-text if you're editing it directly on the page and is not required for the actual effect
+$('[data-text]').on('keyup', function(){
+$(this).attr('data-text', $(this).text());
+});
+</script>
 </body>
 </html>
