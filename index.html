@@ -2,6 +2,24 @@
 <html>
 <head>
 <title>Life Story</title>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+<h1><span style="color:yellow">Welcome To The Official Website Of A Young Student Striving To Make A Splash Into Cyber Security</h1></span>
+<ul class="nav nav-tabs">
+<li><span style="color: red">Home</span></li>
+<li><a href="Projects.html">Projects</a></li>
+<li><a href="Certifications.html">Certifications</a></li>
+<li><a href="FutureAdvances.html">Future Advances</a></li>
+<li><a href="Aboutme.html">About Me</a></li>
+<li><a href="ContactMe.html">Contact Me</a></li>
+</ul>
+</body>
 <style>
 .text-effect {
 overflow: hidden;
@@ -68,22 +86,9 @@ align-content: center;
 align-items: center;
 }
 </style>
-</head>
-<body>
-<h1><span style="color:yellow">Welcome To The Official Website Of A Young Student Striving To Make A Splash Into Cyber Security</h1></span>
-<ul class="nav nav-tabs">
-<li><span style="color: red">Home</span></li>
-<li><a href="Projects.html">Projects</a></li>
-<li><a href="Certifications.html">Certifications</a></li>
-<li><a href="FutureAdvances.html">Future Advances</a></li>
-<li><a href="Aboutme.html">About Me</a></li>
-<li><a href="ContactMe.html">Contact Me</a></li>
-</ul>
-</body>
 </html>
-</body>
-<title>  
- </title>
+<html>
+<title>Life Story</title>
 <body>
 <div class="text-effect">
 <h1 class="neon" data-text="Welcome!"contenteditable>neon</h1>
@@ -96,6 +101,11 @@ align-items: center;
 <p>I want to be the reason company servers are safe and protected.</p>
 <p>My goal is to help as many companies as possible strive to become bigger and stronger.</p>
 <p>If you have any questions or problems you may contact me through the "Contact Me" tab.</p>
-</body>
+<script>
+// This is just to auto-update the data-text if you're editing it directly on the page and is not required for the actual effect
+$('[data-text]').on('keyup', function(){
+$(this).attr('data-text', $(this).text());
+});
+</script>
 </body>
 </html>
