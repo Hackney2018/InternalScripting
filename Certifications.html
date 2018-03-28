@@ -2,6 +2,23 @@
 <html>
 <head>
 <title>Certifications</title>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="Projects.html">Projects</a></li>
+<li><strong>Certifications</strong></li>
+<li><a href="FutureAdvances.html">Future Advances</a></li>
+<li><a href="Aboutme.html">About Me</a></li> 
+<li><a href="ContactMe.html">Contact Me</a></li>
+</ul>
+</body>
 <style>
 .text-effect {
 overflow: hidden;
@@ -69,26 +86,14 @@ align-content: center;
 align-items: center;
 }
 </style>
-<link rel="shortcut icon" href="favicon.ico">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">		
-<link rel="stylesheet" href="css/main.css">
-</head>
+</html>
+<html>
+<title>Certifications</title>
 <body>
-<ul>
-<script type="text/javascript" src="WordEditor.js"></script>
 <div class="text-effect">
 <h1 class="neon" data-text="Certifications"contenteditable>neon</h1>
 <div class="gradient"></div>
 <div class="spotlight"></div>
- 
-<li><a href="index.html">Home</a></li>
-<li><a href="Projects.html">Projects</a></li>
-<li><strong>Certifications</strong></li>
-<li><a href="FutureAdvances.html">Future Advances</a></li>
-<li><a href="Aboutme.html">About Me</a></li> 
-<li><a href="ContactMe.html">Contact Me</a></li> 
-<body>
 <br></br>
 <img src="https://images.techhive.com/images/article/2015/08/microsoft-logo-redwest-a-100611028-large.jpeg"
 a href="https://mail.google.com/mail/u/0/#inbox"
@@ -101,5 +106,11 @@ a href="https://mail.google.com/mail/u/0/#inbox"
 <strong><p align="left">Microsoft Security Fundamentals</strong></p>
 <strong><p align="left">Microsoft Networking Fundamentals</strong></p>
 <strong><p align="left">For my college career I will be aiming towards CompTIA Certifications and more Microsoft Certifications.</strong></p>
+<script>
+// This is just to auto-update the data-text if you're editing it directly on the page and is not required for the actual effect
+$('[data-text]').on('keyup', function(){
+$(this).attr('data-text', $(this).text());
+});
+</script>
 </body>
-<style>
+</html>
