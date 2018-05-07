@@ -1,9 +1,0 @@
-<h1><strong>Life-Story</h1></strong>
-body {
-  background: black;
-  display: inline;
-  min-height: 100vh;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-}
